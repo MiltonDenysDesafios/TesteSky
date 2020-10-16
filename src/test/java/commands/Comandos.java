@@ -1,5 +1,6 @@
 package commands;
 
+
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -40,7 +41,7 @@ public class Comandos {
 	 * @return
 	 * instancia comum para webdriver podendo usar em qualquer classe do codigo
 	 */
-	public WebDriver getDriver() {
+	public static WebDriver getDriver() {
 		return driver;
 	}	
 
@@ -59,6 +60,14 @@ public class Comandos {
 		}
 	}
 	
+	public String obterTexto(By by) {
+		return getDriver().findElement(by).getText();
+	}
+	public String obterTexto(String id) {
+		return obterTexto(By.id(id));
+	}
+	
+	
 	/**
 	 * @author Milton
 	 * @param xpath
@@ -72,6 +81,20 @@ public class Comandos {
 	
 	}
 	
+	/**
+	 * @author Milton
+	 * @return 
+	 * @return
+	 * recupera valor de string
+	 */
+	public static String recuperarValorString(String xpath, String atributo) {				
+		
+		String atribut = atributo;
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		String element = driver.findElement(By.xpath(xpath)).getText();
+		return element;			
+				
+	}
 	
 	/**
 	 * @author Milton

@@ -27,8 +27,20 @@ public class ValidarModalSteps {
 	    public void fecharBannerOkEntendi() {
 		 funcionalidades.ValidarModalFuncionalidades.fecharBannerOkEntendi();
 	 }
+	 @And("seleciono a programacao atual")
+	    public void selecionoProgramacaoAtual() {
+		 funcionalidades.ValidarModalFuncionalidades.selecionarProgramacaoAtual();
+	 }
 	 
+	 @And("finalizo a aplicacao")
+	    public void finalizaAplicacao() {
+		 commands.Comandos.finalizar();
+	 }
 	 
-	
+	 @And("valido se o titulo e o horario estao iguais")
+	    public void validarProgramacaoModal() {
+		 funcionalidades.ValidarModalFuncionalidades.validarProgramacaoModal();
+	 }
+	 	 
 	 
 }
